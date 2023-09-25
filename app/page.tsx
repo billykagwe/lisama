@@ -21,41 +21,102 @@ export default function Home() {
           <div className='mb-8 px-8'>
             <p className='mb-3'>Fill-out the form</p>
             <div className='gap-y-2 flex flex-col mb-4'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mb-2'>
                 <label className='block' htmlFor='product name'>
-                  Product name
+                  Select Client
                 </label>
-                <input type='text' className='border rounded px-4 w-48' />
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>James</option>
+                  <option value=''>Paul</option>
+                  <option value=''>June</option>
+                </select>
               </div>
               <div className='flex flex-col'>
                 <label className='block' htmlFor='product name'>
-                  Rawmaterial (RM)
+                  Select Rawmaterial
                 </label>
-                <input type='text' className='border rounded px-4 w-48' />
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>Mint</option>
+                  <option value=''>Chives</option>
+                  <option value=''>Basil</option>
+                </select>
               </div>
               <div className='flex flex-col'>
                 <label className='block' htmlFor='product name'>
-                  Overhead Cost (OH)
+                  Box Type
                 </label>
-                <input type='text' className='border rounded px-4 w-48' />
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>Herb6</option>
+                  <option value=''>Herb8</option>
+                  <option value=''>Herb9</option>
+                </select>
+              </div>
+
+              <div className='flex flex-col'>
+                <label className='block' htmlFor='product name'>
+                  Pack Size
+                </label>
+                <div className='flex justify-between gap-2  items-center'>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                  <div>X</div>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+              </div>
+
+              <div className='flex justify-center items-center gap-x-2'>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Labor
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Transport
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+              </div>
+              <div className='flex justify-center items-center gap-2'>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Packhouse
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Coldroom
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
               </div>
               <div className='flex flex-col'>
                 <label className='block' htmlFor='product name'>
-                  Packaging Cost (PH)
+                  Documentation
                 </label>
-                <input type='text' className='border rounded px-4 w-48' />
-              </div>
-              <div className='flex flex-col'>
-                <label className='block' htmlFor='product name'>
-                  Labour Cost (LC)
-                </label>
-                <input type='text' className='border rounded px-4 w-48' />
-              </div>
-              <div className='flex flex-col'>
-                <label className='block' htmlFor='product name'>
-                  Product name
-                </label>
-                <input type='text' className='border rounded px-4 w-48' />
+                <input
+                  type='number'
+                  className='border rounded px-4 w-48 py-2'
+                />
               </div>
             </div>
             <div>
