@@ -30,6 +30,7 @@ function page() {
                   <th className='text-left p-1'>Name</th>
                   <th className='text-left p-1'>Country</th>
                   <th className='text-left p-1'>Contract</th>
+                  <th className=' p-1 w-40  text-center'>ACTIONS</th>
                 </tr>
               </thead>
               <tbody>
@@ -37,26 +38,76 @@ function page() {
                   <td className='py-2'>Adebayo</td>
                   <td className='py-2'>Ghana</td>
                   <td className='py-2'>FOB</td>
+                  <td>
+                    <div className='flex gap-2'>
+                      <button className='px-3 py-1 border border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white rounded cursor-pointer'>
+                        EDIT
+                      </button>
+                      <button className='px-3 py-1 border border-red-300 text-red-600 hover:text-white hover:bg-red-600 rounded cursor-pointer'>
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
                 <tr className='border-gray-400 border-b'>
                   <td className='py-2'>Adebayo</td>
                   <td className='py-2'>Ghana</td>
                   <td className='py-2'>FOB</td>
+                  <td>
+                    <div className='flex gap-2'>
+                      <button className='px-3 py-1 border border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white rounded cursor-pointer'>
+                        EDIT
+                      </button>
+                      <button className='px-3 py-1 border border-red-300 text-red-600 hover:text-white hover:bg-red-600 rounded cursor-pointer'>
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
                 <tr className='border-gray-400 border-b'>
                   <td className='py-2'>Adebayo</td>
                   <td className='py-2'>Ghana</td>
                   <td className='py-2'>FOB</td>
+                  <td>
+                    <div className='flex gap-2'>
+                      <button className='px-3 py-1 border border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white rounded cursor-pointer'>
+                        EDIT
+                      </button>
+                      <button className='px-3 py-1 border border-red-300 text-red-600 hover:text-white hover:bg-red-600 rounded cursor-pointer'>
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
                 <tr className='border-gray-400 border-b'>
                   <td className='py-2'>Adebayo</td>
                   <td className='py-2'>Ghana</td>
                   <td className='py-2'>FOB</td>
+                  <td>
+                    <div className='flex gap-2'>
+                      <button className='px-3 py-1 border border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white rounded cursor-pointer'>
+                        EDIT
+                      </button>
+                      <button className='px-3 py-1 border border-red-300 text-red-600 hover:text-white hover:bg-red-600 rounded cursor-pointer'>
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
                 <tr className='border-gray-400 border-b'>
                   <td className='py-2'>Adebayo</td>
                   <td className='py-2'>Ghana</td>
                   <td className='py-2'>FOB</td>
+                  <td>
+                    <div className='flex gap-2'>
+                      <button className='px-3 py-1 border border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white rounded cursor-pointer'>
+                        EDIT
+                      </button>
+                      <button className='px-3 py-1 border border-red-300 text-red-600 hover:text-white hover:bg-red-600 rounded cursor-pointer'>
+                        DELETE
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
