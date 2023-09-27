@@ -1,6 +1,5 @@
 /** @format */
 "use client";
-import { data } from "autoprefixer";
 import { useState } from "react";
 
 interface ICostingData {
@@ -106,7 +105,6 @@ export default function Home() {
   );
 
   const selectedBox = boxes.find((box) => box.id === costingData.boxId);
-  console.log({ selectedBox });
   const numberOfOuterBoxes =
     costingData.orderSize / (costingData.packCount * costingData.packKg);
   const outerBoxPrice = numberOfOuterBoxes * costingData.outerBoxPrice;
