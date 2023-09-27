@@ -558,3 +558,9 @@ export default function Home() {
     </div>
   );
 }
+
+// build a crud dashboard -
+// table for display
+// form for edit and create
+// delete icons at the end of the column
+//
