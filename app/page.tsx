@@ -131,8 +131,9 @@ export default function Home() {
           <div className='mb-8 px-8 max-w-sm w-full'>
             <p className='mb-3'>Fill-out the form</p>
             <div className='gap-y-2 flex flex-col mb-4'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mb-2'>
                 <label className='block' htmlFor='product name'>
+
                   Client
                 </label>
                 <select
@@ -152,10 +153,17 @@ export default function Home() {
                       {client.name}
                     </option>
                   ))}
+                  Select Client
+                </label>
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>James</option>
+                  <option value=''>Paul</option>
+                  <option value=''>June</option>
                 </select>
               </div>
               <div className='flex flex-col'>
                 <label className='block' htmlFor='product name'>
+
                   Order Size (KG)
                 </label>
                 <input
@@ -284,9 +292,29 @@ export default function Home() {
                   type='number'
                   className='border rounded px-4 py-1'
                 />
+=======
+                  Select Rawmaterial
+                </label>
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>Mint</option>
+                  <option value=''>Chives</option>
+                  <option value=''>Basil</option>
+                </select>
               </div>
               <div className='flex flex-col'>
                 <label className='block' htmlFor='product name'>
+                  Box Type
+                </label>
+                <select className='border py-2 rounded ' name='' id=''>
+                  <option value=''>Herb6</option>
+                  <option value=''>Herb8</option>
+                  <option value=''>Herb9</option>
+                </select>
+              </div>
+
+              <div className='flex flex-col'>
+                <label className='block' htmlFor='product name'>
+
                   Transport Cost (TC)
                 </label>
                 <input
@@ -331,6 +359,69 @@ export default function Home() {
                   }}
                   type='number'
                   className='border rounded px-4 py-1'
+
+                  Pack Size
+                </label>
+                <div className='flex justify-between gap-2  items-center'>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                  <div>X</div>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+              </div>
+
+              <div className='flex justify-center items-center gap-x-2'>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Labor
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Transport
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+              </div>
+              <div className='flex justify-center items-center gap-2'>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Packhouse
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+                <div className='w-full'>
+                  <label className='block' htmlFor='product name'>
+                    Coldroom
+                  </label>
+                  <input
+                    type='number'
+                    className='border rounded px-4 block py-2 w-24'
+                  />
+                </div>
+              </div>
+              <div className='flex flex-col'>
+                <label className='block' htmlFor='product name'>
+                  Documentation
+                </label>
+                <input
+                  type='number'
+                  className='border rounded px-4 w-48 py-2'
                 />
               </div>
             </div>
