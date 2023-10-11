@@ -27,6 +27,7 @@ model Client {
   id Int @id @default(autoincrement())
   name String
   contract String
+  country String
 }
 
 model Freight {
