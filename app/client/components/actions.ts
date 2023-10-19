@@ -28,13 +28,11 @@ export const createClient = async (prevState: any, formData: FormData) => {
   }
 };
 
-export const editClient = async (prevState: any, formData: FormData) => {
-  console.log({ formData: JSON.stringify(formData) });
+export const editClient = async ({formData,id }:{formData: FormData,id:number}) => {
   const schema = z.object({
     contract: z.string().nonempty(),
     country: z.string().nonempty(),
     name: z.string().nonempty(),
-    id: z.number(),
   });
 
   try {
@@ -42,14 +40,21 @@ export const editClient = async (prevState: any, formData: FormData) => {
       contract: formData.get("contract"),
       country: formData.get("country"),
       name: formData.get("name"),
-      id: formData.get("id"),
     });
-    // db action
-    await prisma.client.update({ data, where: { id: data.id } });
+     // db action
+    await prisma.client.updateMany({where: { id}, data });
     revalidatePath("/client");
-
     return { message: { success: `Added client ${data.name}` } };
   } catch (e) {
-    return { message: { error: "Failed to create client" } };
+    return { message: { error: "Failed to update client" } };
   }
 };
+
+export const deleteClient = async (id:number) => {
+  try {
+    await prisma.client.delete({ where: { id } })
+     revalidatePath("/client");
+  } catch (error) {
+    return { message: { error: "Failed to delete client" } };
+  }
+}

@@ -154,7 +154,7 @@ export default function Home() {
                     </option>
                   ))}
                   Select Client
-                </label>
+                </select>
                 <select className='border py-2 rounded ' name='' id=''>
                   <option value=''>James</option>
                   <option value=''>Paul</option>
@@ -292,9 +292,8 @@ export default function Home() {
                   type='number'
                   className='border rounded px-4 py-1'
                 />
-=======
-                  Select Rawmaterial
-                </label>
+
+                </div>
                 <select className='border py-2 rounded ' name='' id=''>
                   <option value=''>Mint</option>
                   <option value=''>Chives</option>
@@ -359,7 +358,8 @@ export default function Home() {
                   }}
                   type='number'
                   className='border rounded px-4 py-1'
-
+                  />
+                <label>
                   Pack Size
                 </label>
                 <div className='flex justify-between gap-2  items-center'>
@@ -646,8 +646,7 @@ export default function Home() {
           <p>All Rights Reserved</p>
         </div>
       </div>
-    </div>
-  );
+  )
 }
 
 // build a crud dashboard -

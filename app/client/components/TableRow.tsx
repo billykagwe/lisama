@@ -5,8 +5,11 @@ import Modal from "@/app/components/Modal";
 import React, { useState } from "react";
 import EditClient from "./EditForm";
 import { Client } from "@prisma/client";
+import { deleteClient } from "./actions";
+import { redirect } from "next/navigation";
 
 function TableRow({ client }: { client: Client }) {
+  console.log("ddfffff",{id: client.id})
   return (
     <tr className='border-gray-400 border-b'>
       <td className='py-2'>{client.name}</td>
@@ -15,7 +18,7 @@ function TableRow({ client }: { client: Client }) {
       <td>
         <div className='flex gap-2'>
           <EditButton client={client} />
-          <DeleteButton />
+          <DeleteButton id={client.id} />
         </div>
       </td>
     </tr>
@@ -41,7 +44,7 @@ const EditButton = ({ client }: { client: Client }) => {
   );
 };
 
-const DeleteButton = () => {
+const DeleteButton = ({id}:{id:number}) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -60,7 +63,15 @@ const DeleteButton = () => {
             <button className='bg-gray-100 border border-gray-300  text-black px-4 py-2 rounded'>
               Cancel
             </button>
-            <button className='bg-red-600 text-white px-4 py-2 rounded'>
+            <button onClick={async () => {
+              try {
+                 await deleteClient(id)
+                 redirect('/client')
+              } catch (error) {
+                console.log({error})
+              }
+             
+            }} className='bg-red-600 text-white px-4 py-2 rounded'>
               Delete
             </button>
           </div>
