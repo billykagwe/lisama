@@ -3,24 +3,22 @@
 
 import Modal from "@/app/components/Modal";
 import React, { useState } from "react";
-import EditClient from "./EditForm";
-import { Client } from "@prisma/client";
-import { deleteClient } from "./actions";
+import EditFreight from "./EditForm";
+import { Box} from "@prisma/client";
+import { deleteBox } from "./actions";
 import { redirect } from "next/navigation";
 
-function TableRow({ client }: { client: Client }) {
-    const [show, setShow] = useState(false)
+function TableRow({ box }: { box: Box }) {
+  const [show, setShow] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
-  
-  return (
-    <tr className='border-gray-200 border-b text-sm'>
-      <td className='py-2'>{client.name}</td>
-      <td className='py-2'>{client.country}</td>
-      <td className='py-2'>{client.contract}</td>
-      <td>
-        {showDeleteModal && <DeleteModal id={client.id} closeModal={() => setShowDeleteModal(false)} isOpen={ showDeleteModal} />}
-        {showEditModal && <EditModal client={client}  closeModal={() => setShowEditModal(false)} isOpen={ showEditModal}/>}
+  return ( 
+    <tr className='border-gray-400 border-b'>
+      <td className='py-2'>{box.name}</td>
+      <td className='py-2'>{box.price}</td>
+         <td>
+        {showDeleteModal && <DeleteModal id={box.id} closeModal={() => setShowDeleteModal(false)} isOpen={ showDeleteModal} />}
+        {showEditModal && <EditModal box={box}  closeModal={() => setShowEditModal(false)} isOpen={ showEditModal}/>}
    
         <div className="flex">
       { !show && <svg onClick={() => setShow(!show)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 gap-2 cursor-pointer">
@@ -48,26 +46,26 @@ function TableRow({ client }: { client: Client }) {
 
 export default TableRow;
 
-const EditModal =  ({ client,closeModal,isOpen }: { client: Client,closeModal: () => void,isOpen: boolean }) => {
+const EditModal = ({ box,closeModal,isOpen }: { box: Box,closeModal: () => void,isOpen:boolean }) => {
+
   return (
     <div>
-    
+ 
       <Modal closeModal={closeModal} isOpen={isOpen}>
-        <EditClient client={client} />
+        <EditFreight box={box} />
       </Modal>
     </div>
   );
 };
 
-const DeleteModal =({id,closeModal,isOpen}:{id:number,closeModal: () => void,isOpen: boolean}) => {
-  
+const DeleteModal = ({id,isOpen,closeModal}:{id:number,isOpen:boolean,closeModal: () => void}) => {
   return (
     <div>
-
+   
       <Modal closeModal={closeModal} isOpen={isOpen}>
         <div>
           <p className='mt-4 font-bold text-gray-800 mb-1 text-lg'>
-            Delete Client
+            Delete Box
           </p>
           <p className='mb-2'>The action cannot be undone</p>
           <div className='flex gap-4 mt-4'>
@@ -76,7 +74,7 @@ const DeleteModal =({id,closeModal,isOpen}:{id:number,closeModal: () => void,isO
             </button>
             <button onClick={async () => {
               try {
-                 await deleteClient(id)
+                 await deleteBox(id)
                  redirect('/client')
               } catch (error) {
                 console.log({error})
