@@ -5,12 +5,13 @@ import CreateBox from "./components/CreateForm";
 import TableRow from "./components/TableRow";
 import prisma from "../db";
 
+export const dynamic = "force-dynamic";
+
 async function page() {
   const boxes = await prisma.box.findMany();
   return (
     <div className=' flex flex-col   items-center max-w-5xl w-full'>
       <div className=' flex  flex-col justify-center  w-full '>
-        
         <div className=' h-screen flex flex-col '>
           <CreateBox />
           <div className='flex ml-4 mt-2'>
